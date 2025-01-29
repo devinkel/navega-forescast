@@ -2,6 +2,8 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
+use Illuminate\Support\Facades\Response;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

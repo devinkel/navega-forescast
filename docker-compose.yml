@@ -49,7 +49,7 @@ services:
     container_name: lumen_adminer
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "8000:8000"
     environment:
       ADMINER_DEFAULT_SERVER: db
       ADMINER_DESIGN: dracula

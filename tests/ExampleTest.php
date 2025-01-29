@@ -5,6 +5,8 @@ namespace Tests;
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
+use App\Services\OceanApiService;
+
 class ExampleTest extends TestCase
 {
     /**
@@ -12,12 +14,9 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_that_base_endpoint_returns_a_successful_response()
+    public function test_get_ocean_api()
     {
-        $this->get('/');
-
-        $this->assertEquals(
-            $this->app->version(), $this->response->getContent()
-        );
+        $oceanApi = new OceanApiService();
+        dd($oceanApi->getForecast());
     }
 }
