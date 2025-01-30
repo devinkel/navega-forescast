@@ -29,6 +29,7 @@ abstract class AbstractApiService
     }
     protected function get(array $params = []): array
     {
+        
         try {
             $response = $this->client->get(config('ocean_client_api.url'), [
                 'query' => $params,
@@ -39,7 +40,6 @@ abstract class AbstractApiService
 
             return $this->handleResponse($response);
         } catch (RequestException $e) {
-            dd($e);
             // Guzzle 7 possui tratamento melhorado para erros de request
             if ($e->hasResponse()) {
                 $statusCode = $e->getResponse()->getStatusCode();
