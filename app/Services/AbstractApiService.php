@@ -15,9 +15,9 @@ abstract class AbstractApiService
     protected Client $client;
     protected $config;
 
-    public function __construct()
+    public function __construct($config)
     {
-        $this->config = config('ocean_client_api');
+        $this->config = $config;
         $this->client = new Client([
             'base_uri' => $this->config['url'],
             'headers' => $this->config['headers'],
@@ -29,9 +29,8 @@ abstract class AbstractApiService
     }
     protected function get(array $params = []): array
     {
-        
         try {
-            $response = $this->client->get(config('ocean_client_api.url'), [
+            $response = $this->client->get($this->config['url'], [
                 'query' => $params,
                 'timeout' => $this->config['timeout'],
                 'connect_timeout' => 10,
