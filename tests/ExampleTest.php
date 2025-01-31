@@ -18,6 +18,6 @@ class ExampleTest extends TestCase
     {
         $config = config('ocean_client_api');
         $oceanApi = new OceanApiService($config);
-        dd($oceanApi->getForecast());
+        $oceanApi->getForecast();
     }
 }

@@ -14,7 +14,8 @@ class Beach extends Model
      * @var string[]
      */
     protected $fillable = [
-        'beach_name', 'latitude', 'longitude'
+        'beach_name',
+        'latitude',
+        'longitude'
     ];
-
 }

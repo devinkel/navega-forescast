@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB; 
-
+use Illuminate\Support\Facades\DB;
 
 class BeachSeeder extends Seeder
 {
@@ -17,7 +17,8 @@ class BeachSeeder extends Seeder
         DB::table('beaches')->insert([
             'beach_name' => 'Navegantes',
             'latitude' => '-26.8989',
-            'longitude' => '-48.6542'
+            'longitude' => '-48.6542',
+            'created_at' => Carbon::now()
         ]);
     }
 }
