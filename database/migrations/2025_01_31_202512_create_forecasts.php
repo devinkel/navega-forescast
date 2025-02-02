@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('forecasts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('beach_id')->constrained('beaches')->onDelete('cascade');
-            $table->json('forecast');  // Campo JSON para armazenar todas as previsões de surf
+            $table->json('forecast')->nullable();  // Campo JSON para armazenar todas as previsões de surf
             $table->timestamps();
         });
     }
