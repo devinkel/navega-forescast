@@ -18,4 +18,9 @@ class Beach extends Model
         'latitude',
         'longitude'
     ];
+
+    public function forecasts()
+    {
+        return $this->hasMany(Forecasts::class);
+    }
 }
