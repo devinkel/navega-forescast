@@ -5,14 +5,17 @@ namespace Tests;
 use App\Services\Internal\ForecastService;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
+/**
+ * @testdox --ForecastService
+ *
+ */
 class ForecastSeviceTest extends TestCase
 {
 
     use DatabaseTransactions;
     /**
-     * @testdox --ForecastService : Falha ao criar forecast com beach_id inválido
+     * @testdox Falha ao criar forecast com beach_id inválido
      *
-     * @group Forecast
      */
 
     public function testForecastReturnErrorWithInvalidBeachId()
@@ -38,9 +41,8 @@ class ForecastSeviceTest extends TestCase
     }
 
     /**
-     * @testdox --ForecastService : Falha ao criar forecast sem beach_id
+     * @testdox Falha ao criar forecast sem beach_id
      *
-     * @group Forecast
      */
 
     public function testForecastReturnErrorWithoutBeachId()
@@ -65,9 +67,8 @@ class ForecastSeviceTest extends TestCase
     }
 
     /**
-     * @testdox --ForecastService : Sucesso ao criar um foracast
+     * @testdox Sucesso ao criar um forecast
      *
-     * @group Forecast
      */
 
     public function testForecastSuccess()
@@ -99,9 +100,8 @@ class ForecastSeviceTest extends TestCase
     }
 
     /**
-     * @testdox --ForecastService : Retorna todos os forecasts
+     * @testdox Retorna todos os forecasts
      *
-     * @group Forecast
      */
 
     public function testForecastReturnAllForecasts()
@@ -113,4 +113,68 @@ class ForecastSeviceTest extends TestCase
         $this->assertEquals($formatedForescasts['error'], false);
         $this->assertNotEmpty($formatedForescasts['data']);
     }
+
+    /**
+     * @testdox Falha ao obter Forecast inexistente
+     *
+     */
+
+    public function testForecastReturnErrorWithInexistentForecast()
+    {
+        $newForecast = new ForecastService();
+
+        $forecasts = $newForecast->getById(9999); // ID não exista;
+        $formatedForescast = json_decode($forecasts->getContent(), true);
+        $this->assertEquals($formatedForescast['error'], true);
+        $this->assertEquals($formatedForescast['message'], 'Forecast not found.');
+        $this->assertEmpty($formatedForescast['data']);
+    }
+
+    /**
+     * @testdox Sucesso ao obter Forecast especifico
+     *
+     */
+
+     public function testForecastReturnSuccessWithExistentForecast()
+     {
+         $newForecast = new ForecastService();
+ 
+         $forecast = $newForecast->getById(1); // ID não exista;
+
+         $formatedForescast = json_decode($forecast->getContent(), true);
+         $this->assertEquals($formatedForescast['error'], false);
+         $this->assertNotEmpty($formatedForescast['data']);
+     }
+
+    /**
+     * @testdox Falha ao excluir Forecast especifico inexistente
+     *
+     */
+
+     public function testForecastDeleteReturnErrorWithInexistentForecast()
+     {
+        $newForecast = new ForecastService();
+        $forecast = $newForecast->delete(9999);
+
+        $formatedForescast = json_decode($forecast->getContent(), true);
+        $this->assertEquals($formatedForescast['error'], true);
+        $this->assertEquals($formatedForescast['message'], 'Forecast not found.');
+     }
+
+    /**
+     * 
+     * @testdox Sucesso excluir Forecast especifico
+     *
+     */
+
+     public function testForecastReturnSuccessDeleteExistentForecast()
+     {
+         $newForecast = new ForecastService();
+         $forecast = $newForecast->delete(1);
+
+         $formatedForescast = json_decode($forecast->getContent(), true);
+         $this->assertEquals($formatedForescast['error'], false);
+         $this->assertNotEmpty($formatedForescast['message'], 'Forecast deleted successfully.');
+     }
+
 }

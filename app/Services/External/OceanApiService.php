@@ -4,7 +4,26 @@ namespace App\Services\External;
 
 class OceanApiService extends AbstractApiService
 {
-    public function getForecast()
+
+    /**
+     * Faz uma solicita o para a API de previsão de ondas e retorna os dados formatados.
+     * 
+     * @return array Retorna um array com as previsões de ondas formatadas hora.
+     */
+    public function generateForecast(): array {
+        $forecast = $this->getForecast();
+        $normalize_forecast = $this->normalizeForecast($forecast);
+
+        return $normalize_forecast;
+    }
+
+
+    /**
+     * Faz uma solicita o para a API de previsão de ondas e retorna os dados em forma de array.
+     * 
+     * @return array Retorna um array com as previsões de ondas em forma de array.
+     */
+    protected function getForecast(): array
     {
         $params = [
             "latitude" => -26.8989,
@@ -16,12 +35,31 @@ class OceanApiService extends AbstractApiService
 
         $forecast = $this->get($params);
 
-        $normalize_forecast = $this->normalizeForecast($forecast);
-
-        return $normalize_forecast;
+        return $forecast;
     }
 
-    public function normalizeForecast(array $forecast): array
+    /**
+     * Recebe um array com as previsões de ondas e as organiza por data e hora.
+     * 
+     * @param array $forecast Um array com as previsões de ondas.
+     * 
+     * @return array Um array com as previsões de ondas agrupadas por data e hora.
+     * 
+     * Exemplo de retorno:
+     * [
+     *     '2025-01-30' => [
+     *         '00:00' => [...],
+     *         '01:00' => [...],
+     *         ...
+     *     ],
+     *     '2025-01-31' => [
+     *         '00:00' => [...],
+     *         '01:00' => [...],
+     *         ...
+     *     ]
+     * ]
+     */
+    protected function normalizeForecast(array $forecast): array
     {
 
         $hourly = isset($forecast['hourly']) ? $forecast['hourly'] : [];
