@@ -2,8 +2,6 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
-use Illuminate\Support\Facades\Response;
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,4 +15,9 @@ use Illuminate\Support\Facades\Response;
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
+});
+
+$router->group(['prefix' => 'forecast'], function () use ($router) {
+    $router->get('/', 'ForecastController@index');
+    $router->get('/live', 'ForecastController@getLiveForecast');
 });

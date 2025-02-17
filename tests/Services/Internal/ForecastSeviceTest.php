@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\Services\Internal\ForecastService;
+use Carbon\Carbon;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
 /**
@@ -74,7 +75,7 @@ class ForecastSeviceTest extends TestCase
     public function testForecastSuccess()
     {
         $validForecast =  [
-            'beach_id' => 1, // Supondo que esse ID não exista
+            'beach_id' => 1,
             'forecast' => [
                 '2025-02-03' => [
                     '00:00' => [
@@ -89,7 +90,7 @@ class ForecastSeviceTest extends TestCase
 
         $response = $newForecast->create($validForecast);
         $validResponseToTest = json_decode(json_encode($response->getData()->data), true);
-
+        
         unset($validResponseToTest['updated_at']);
         unset($validResponseToTest['created_at']);
         unset($validResponseToTest['id']);
@@ -135,30 +136,64 @@ class ForecastSeviceTest extends TestCase
      *
      */
 
-     public function testForecastReturnSuccessWithExistentForecast()
-     {
-         $newForecast = new ForecastService();
- 
-         $forecast = $newForecast->getById(1); // ID não exista;
+    public function testForecastReturnSuccessWithExistentForecast()
+    {
+        $newForecast = new ForecastService();
 
-         $formatedForescast = json_decode($forecast->getContent(), true);
-         $this->assertEquals($formatedForescast['error'], false);
-         $this->assertNotEmpty($formatedForescast['data']);
-     }
+        $forecast = $newForecast->getById(1); // ID não exista;
+
+        $formatedForescast = json_decode($forecast->getContent(), true);
+        $this->assertEquals($formatedForescast['error'], false);
+        $this->assertNotEmpty($formatedForescast['data']);
+    }
 
     /**
      * @testdox Falha ao excluir Forecast especifico inexistente
      *
      */
 
-     public function testForecastDeleteReturnErrorWithInexistentForecast()
-     {
+    public function testForecastDeleteReturnErrorWithInexistentForecast()
+    {
         $newForecast = new ForecastService();
         $forecast = $newForecast->delete(9999);
 
         $formatedForescast = json_decode($forecast->getContent(), true);
         $this->assertEquals($formatedForescast['error'], true);
         $this->assertEquals($formatedForescast['message'], 'Forecast not found.');
+    }
+
+    /**
+     * @testdox Sucesso ao obter Forecast por created_at
+     *
+     */
+
+    public function testForecastReturnSuccessGetForecastByCreatedAt()
+    {
+        $newForecast = new ForecastService();
+        $dateToday = Carbon::now()->toDateString();
+        $forecast = $newForecast->getForecastByCreatedAt($dateToday);
+        
+
+        $formatedForescast = json_decode($forecast->getContent(), true);
+        $this->assertEquals($formatedForescast['error'], false);
+        $this->assertEmpty($formatedForescast['data']);
+    }
+
+    /**
+     * @testdox Sucesso ao obter Forecast por created_at mas sem forecast
+     *
+     */
+
+     public function testForecastReturnSuccessGetEmptyForecastByCreatedAt()
+     {
+         $newForecast = new ForecastService();
+         $dateToday = Carbon::now()->toDateString();
+         $forecast = $newForecast->getForecastByCreatedAt($dateToday);
+         
+ 
+         $formatedForescast = json_decode($forecast->getContent(), true);
+         $this->assertEquals($formatedForescast['error'], false);
+         $this->assertEmpty($formatedForescast['data']);
      }
 
     /**
@@ -167,14 +202,13 @@ class ForecastSeviceTest extends TestCase
      *
      */
 
-     public function testForecastReturnSuccessDeleteExistentForecast()
-     {
-         $newForecast = new ForecastService();
-         $forecast = $newForecast->delete(1);
+    public function testForecastReturnSuccessDeleteExistentForecast()
+    {
+        $newForecast = new ForecastService();
+        $forecast = $newForecast->delete(1);
 
-         $formatedForescast = json_decode($forecast->getContent(), true);
-         $this->assertEquals($formatedForescast['error'], false);
-         $this->assertNotEmpty($formatedForescast['message'], 'Forecast deleted successfully.');
-     }
-
+        $formatedForescast = json_decode($forecast->getContent(), true);
+        $this->assertEquals($formatedForescast['error'], false);
+        $this->assertNotEmpty($formatedForescast['message'], 'Forecast deleted successfully.');
+    }
 }

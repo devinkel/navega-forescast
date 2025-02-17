@@ -14,4 +14,6 @@ class Forecasts extends Model
     protected $casts = [
         'forecast' => 'array', // Isso permite que o JSON seja convertido para um array automaticamente
     ];
+
+    protected $hidden = ['updated_at'];
 }

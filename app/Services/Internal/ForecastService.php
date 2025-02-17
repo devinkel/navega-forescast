@@ -71,7 +71,6 @@ class ForecastService
     public function getAll(): JsonResponse
     {
         $forecasts = Forecasts::all();
-
         return response()->json([
             'error' => false,
             'data' => $forecasts
@@ -132,6 +131,29 @@ class ForecastService
         return response()->json([
             'error' => false,
             'message' => 'Forecast deleted successfully.'
+        ], 200);
+    }
+
+    
+    /**
+     * Retrieve a forecast by the creation date.
+     *
+     * @param string $createdAt
+     *   The date to filter forecasts by creation date.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     *   A JSON response with a 200 status code and the forecast data for the given date.
+     *   The 'error' key in the response is set to false, and the 'data' key contains the forecast details.
+     *   If no forecast is found for the given date, 'data' will contain null.
+     */
+
+    public function getForecastByCreatedAt($createdAt): JsonResponse
+    {
+        $forecast = Forecasts::whereDate('created_at', $createdAt)->first();
+
+        return response()->json([
+            'error' => false,
+            'data' => $forecast
         ], 200);
     }
 }

@@ -10,7 +10,8 @@ class OceanApiService extends AbstractApiService
      * 
      * @return array Retorna um array com as previsões de ondas formatadas hora.
      */
-    public function generateForecast(): array {
+    public function generateForecast(): array
+    {
         $forecast = $this->getForecast();
         $normalize_forecast = $this->normalizeForecast($forecast);
 
@@ -28,9 +29,10 @@ class OceanApiService extends AbstractApiService
         $params = [
             "latitude" => -26.8989,
             "longitude" => -48.6542,
-            "hourly" => ["wave_height", "wave_direction", "wave_period", "swell_wave_height", "swell_wave_direction", "swell_wave_period"],
+            "hourly" => ["wave_height", "wave_direction", "wave_period", "swell_wave_height", "swell_wave_direction", "swell_wave_period", "wind_wave_direction"],
             "timezone" => "America/Sao_Paulo",
-            "forecast_days" => 2
+            "forecast_days" => 1,
+            'temporal_resolution' => 'hourly_3', 
         ];
 
         $forecast = $this->get($params);
@@ -70,23 +72,17 @@ class OceanApiService extends AbstractApiService
 
         if (count($hourly) >= 1 && isset($hourly['time'])) {
             foreach ($hourly['time'] as $index => $time) {
-                // Extraímos a data (ano-mês-dia) e a hora (hora:minuto) da string de tempo
-                $date = substr($time, 0, 10); // "2025-01-30"
                 $hour = substr($time, 11, 5); // "00:00", "01:00", etc.
 
-                // Se o dia ainda não existe no array, criamos ele
-                if (!isset($grouped_by_date_and_time[$date])) {
-                    $grouped_by_date_and_time[$date] = [];
-                }
-
                 // Adicionamos os dados da hora atual no dia e hora correspondentes
-                $grouped_by_date_and_time[$date][$hour] = [
-                    'swell_wave_height' => $hourly['swell_wave_height'][$index] . $hourly_units['swell_wave_height'],
+                $grouped_by_date_and_time[$hour] = [
                     'wave_height' => $hourly['wave_height'][$index] . $hourly_units['wave_height'],
-                    'wave_direction' => $hourly['wave_direction'][$index] . $hourly_units['wave_direction'],
+                    'wave_direction' => $hourly['wave_direction'][$index],
                     'wave_period' => $hourly['wave_period'][$index] . $hourly_units['wave_period'],
-                    'swell_wave_direction' => $hourly['swell_wave_direction'][$index] . $hourly_units['swell_wave_direction'],
-                    'swell_wave_period' => $hourly['swell_wave_period'][$index] . $hourly_units['swell_wave_period']
+                    'swell_wave_height' => $hourly['swell_wave_height'][$index] . $hourly_units['swell_wave_height'],
+                    'swell_wave_direction' => $hourly['swell_wave_direction'][$index],
+                    'swell_wave_period' => $hourly['swell_wave_period'][$index] . $hourly_units['swell_wave_period'],
+                    'wind_wave_direction' => $hourly['wind_wave_direction'][$index]
                 ];
             }
         }
