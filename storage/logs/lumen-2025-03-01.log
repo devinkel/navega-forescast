@@ -1,0 +1,259 @@
+[2025-03-01 02:02:36] local.ERROR: There are no commands defined in the "forecast" namespace.
+
+Did you mean this?
+    forecasrt {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"forecast\" namespace.
+
+Did you mean this?
+    forecasrt at /var/www/vendor/symfony/console/Application.php:669)
+[stacktrace]
+#0 /var/www/vendor/symfony/console/Application.php(720): Symfony\\Component\\Console\\Application->findNamespace('forecast')
+#1 /var/www/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find('forecast:run')
+#2 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-03-01 02:03:29] local.ERROR: There are no commands defined in the "forecast" namespace.
+
+Did you mean this?
+    forecasrt {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"forecast\" namespace.
+
+Did you mean this?
+    forecasrt at /var/www/vendor/symfony/console/Application.php:669)
+[stacktrace]
+#0 /var/www/vendor/symfony/console/Application.php(720): Symfony\\Component\\Console\\Application->findNamespace('forecast')
+#1 /var/www/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find('forecast:run')
+#2 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-03-01 02:08:44] local.ERROR: Method App\Console\Commands\ForecastRunner::fail does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method App\\Console\\Commands\\ForecastRunner::fail does not exist. at /var/www/vendor/illuminate/macroable/Traits/Macroable.php:112)
+[stacktrace]
+#0 /var/www/app/Console/Commands/ForecastRunner.php(25): Illuminate\\Console\\Command->__call('fail', Array)
+#1 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#2 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#7 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 {main}
+"} 
+[2025-03-01 19:32:11] local.ERROR: The "name" argument does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\InvalidArgumentException(code: 0): The \"name\" argument does not exist. at /var/www/vendor/symfony/console/Input/Input.php:102)
+[stacktrace]
+#0 /var/www/vendor/illuminate/console/Concerns/InteractsWithIO.php(84): Symfony\\Component\\Console\\Input\\Input->getArgument('name')
+#1 /var/www/app/Console/Commands/ForecastRunner.php(27): Illuminate\\Console\\Command->argument('name')
+#2 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#3 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#6 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#7 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#8 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2025-03-01 20:34:02] local.ERROR: Not enough arguments (missing: "state"). {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): Not enough arguments (missing: \"state\"). at /var/www/vendor/symfony/console/Input/Input.php:77)
+[stacktrace]
+#0 /var/www/vendor/symfony/console/Command/Command.php(321): Symfony\\Component\\Console\\Input\\Input->validate()
+#1 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#2 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 {main}
+"} 
+[2025-03-01 20:42:22] local.ERROR: Cannot access offset of type Symfony\Component\Console\Question\ChoiceQuestion on array {"exception":"[object] (TypeError(code: 0): Cannot access offset of type Symfony\\Component\\Console\\Question\\ChoiceQuestion on array at /var/www/app/Console/Commands/ForecastRunner.php:30)
+[stacktrace]
+#0 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#1 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#4 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#5 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#6 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#7 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 {main}
+"} 
+[2025-03-01 20:43:02] local.ERROR: Unclosed '{' on line 9 {"exception":"[object] (ParseError(code: 0): Unclosed '{' on line 9 at /var/www/app/Console/Commands/ForecastRunner.php:44)
+[stacktrace]
+#0 /var/www/vendor/composer/ClassLoader.php(427): Composer\\Autoload\\{closure}('/var/www/vendor...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Console\\\\Com...')
+#2 /var/www/vendor/illuminate/console/Application.php(239): is_subclass_of('App\\\\Console\\\\Com...', 'Symfony\\\\Compone...')
+#3 /var/www/vendor/illuminate/console/Application.php(265): Illuminate\\Console\\Application->resolve('App\\\\Console\\\\Com...')
+#4 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(260): Illuminate\\Console\\Application->resolveCommands(Array)
+#5 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Laravel\\Lumen\\Console\\Kernel->getArtisan()
+#6 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 {main}
+"} 
+[2025-03-01 20:43:16] local.ERROR: Cannot access offset of type Symfony\Component\Console\Question\ChoiceQuestion on array {"exception":"[object] (TypeError(code: 0): Cannot access offset of type Symfony\\Component\\Console\\Question\\ChoiceQuestion on array at /var/www/app/Console/Commands/ForecastRunner.php:34)
+[stacktrace]
+#0 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#1 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#4 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#5 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#6 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#7 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 {main}
+"} 
+[2025-03-01 20:43:34] local.ERROR: Cannot access offset of type Symfony\Component\Console\Question\ChoiceQuestion on array {"exception":"[object] (TypeError(code: 0): Cannot access offset of type Symfony\\Component\\Console\\Question\\ChoiceQuestion on array at /var/www/app/Console/Commands/ForecastRunner.php:35)
+[stacktrace]
+#0 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#1 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#4 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#5 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#6 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#7 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 {main}
+"} 
+[2025-03-01 21:00:14] local.ERROR: Undefined constant "App\Console\Commands\states" {"exception":"[object] (Error(code: 0): Undefined constant \"App\\Console\\Commands\\states\" at /var/www/app/Console/Commands/ForecastRunner.php:21)
+[stacktrace]
+#0 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#1 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#4 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#5 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#6 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#7 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 {main}
+"} 
+[2025-03-01 21:05:07] local.ERROR: Call to undefined function App\Console\Commands\typeOf() {"exception":"[object] (Error(code: 0): Call to undefined function App\\Console\\Commands\\typeOf() at /var/www/app/Console/Commands/ForecastRunner.php:21)
+[stacktrace]
+#0 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#1 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#2 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#3 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#4 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#5 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#6 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#7 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 {main}
+"} 
+[2025-03-01 21:06:18] local.ERROR: Undefined array key 1 {"exception":"[object] (ErrorException(code: 0): Undefined array key 1 at /var/www/app/Console/Commands/ForecastRunner.php:31)
+[stacktrace]
+#0 /var/www/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(47): Laravel\\Lumen\\Application->handleError(2, 'Undefined array...', '/var/www/app/Co...', 31)
+#1 /var/www/app/Console/Commands/ForecastRunner.php(31): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(2, 'Undefined array...', '/var/www/app/Co...', 31)
+#2 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#3 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#5 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#6 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#7 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#8 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2025-03-01 21:06:19] local.ERROR: Laravel\Prompts\suggest(): Argument #2 ($options) must be of type Illuminate\Support\Collection|Closure|array, true given, called in /var/www/app/Console/Commands/ForecastRunner.php on line 23 {"exception":"[object] (TypeError(code: 0): Laravel\\Prompts\\suggest(): Argument #2 ($options) must be of type Illuminate\\Support\\Collection|Closure|array, true given, called in /var/www/app/Console/Commands/ForecastRunner.php on line 23 at /var/www/vendor/laravel/prompts/src/helpers.php:91)
+[stacktrace]
+#0 /var/www/app/Console/Commands/ForecastRunner.php(23): Laravel\\Prompts\\suggest('Selecione o est...', true, 'Selecione o est...', '', 5, true, NULL, 'Use as setas do...')
+#1 /var/www/vendor/illuminate/container/BoundMethod.php(36): App\\Console\\Commands\\ForecastRunner->handle()
+#2 /var/www/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 /var/www/vendor/illuminate/container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 /var/www/vendor/illuminate/container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 /var/www/vendor/illuminate/container/Container.php(662): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 /var/www/vendor/illuminate/console/Command.php(211): Illuminate\\Container\\Container->call(Array)
+#7 /var/www/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#8 /var/www/vendor/illuminate/console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 /var/www/vendor/symfony/console/Application.php(1078): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /var/www/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(App\\Console\\Commands\\ForecastRunner), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 {main}
+"} 
+[2025-03-01 21:18:14] local.ERROR: Command "db:ssed" is not defined.
+
+Did you mean one of these?
+    db:seed
+    db:wipe {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:ssed\" is not defined.
+
+Did you mean one of these?
+    db:seed
+    db:wipe at /var/www/vendor/symfony/console/Application.php:737)
+[stacktrace]
+#0 /var/www/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find('db:ssed')
+#1 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 
+[2025-03-01 21:18:19] local.ERROR: Command "db:ssed" is not defined.
+
+Did you mean one of these?
+    db:seed
+    db:wipe {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:ssed\" is not defined.
+
+Did you mean one of these?
+    db:seed
+    db:wipe at /var/www/vendor/symfony/console/Application.php:737)
+[stacktrace]
+#0 /var/www/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find('db:ssed')
+#1 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 
+[2025-03-01 23:02:33] local.ERROR: Command "db:ssed" is not defined.
+
+Did you mean one of these?
+    db:seed
+    db:wipe {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"db:ssed\" is not defined.
+
+Did you mean one of these?
+    db:seed
+    db:wipe at /var/www/vendor/symfony/console/Application.php:737)
+[stacktrace]
+#0 /var/www/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find('db:ssed')
+#1 /var/www/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /var/www/vendor/laravel/lumen-framework/src/Console/Kernel.php(160): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 

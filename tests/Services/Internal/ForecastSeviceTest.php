@@ -140,7 +140,7 @@ class ForecastSeviceTest extends TestCase
     {
         $newForecast = new ForecastService();
 
-        $forecast = $newForecast->getById(1); // ID não exista;
+        $forecast = $newForecast->getById(9999); // ID não exista;
 
         $formatedForescast = json_decode($forecast->getContent(), true);
         $this->assertEquals($formatedForescast['error'], false);

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         // $this->call('UsersTableSeeder');
         $this->call([
             BeachSeeder::class,
-            // ForecastSeeder::class
+            ForecastSeeder::class
         ]);
     }
 }

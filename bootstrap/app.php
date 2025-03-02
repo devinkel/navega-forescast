@@ -48,6 +48,8 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Register Config Files
@@ -61,6 +63,8 @@ $app->singleton(
 
 $app->configure('app');
 $app->configure('ocean_client_api');
+$app->configure('coastal_cities_in_brazil');
+$app->configure('nominatim_client_api');
 /*
 |--------------------------------------------------------------------------
 | Register Middleware

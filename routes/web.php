@@ -18,6 +18,5 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'forecast'], function () use ($router) {
-    $router->get('/', 'ForecastController@index');
     $router->get('/live', 'ForecastController@getLiveForecast');
 });
