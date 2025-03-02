@@ -57,9 +57,9 @@ php artisan test:run
 - Testes para garantir a qualidade do código (opcional)
 
 ## Exemplo de Uso
-![Selecting a state](/app/public/example/state.png)
-![Selecting a city](/app/public/example/city.png)
-![Result](/app/public/example/table.png)
+![Selecting a state](/public/example/state.png)
+![Selecting a city](/public/example/city.png)
+![Result](/public/example/table.png)
 
 ## Licença
 Este projeto é de uso livre.
@@ -123,9 +123,9 @@ php artisan test:run
 - Tests to ensure code quality (optional)
 
 ## Example Usage
-![Selecting a state](/app/public/example/state.png)
-![Selecting a city](/app/public/example/city.png)
-![Result](/app/public/example/table.png)
+![Selecting a state](/public/example/state.png)
+![Selecting a city](/public/example/city.png)
+![Result](/public/example/table.png)
 
 ## License
 This project is free to use.
